@@ -32,21 +32,28 @@ function generatePassword() {
   }
 
   //Promt for character types to include
-  var includeLowercase = promt("Include lowercase letters?");
-  var includeUppercase = promt("Include uppercase leters?");
-  var includeNumbers = promt("Include numbers?");
-  var includeSpecialChars = promt("Include special characters?");
+  var includeLowercase = confirm("Include lowercase letters?");
+  var includeUppercase = confirm("Include uppercase letters?");
+  var includeNumbers = confirm("Include numbers?");
+  var includeSpecialChars = confirm("Include special characters?");
 
   //Confirm at least one character type is selected
-
+  if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars);
+    alert("Please select at least one character type!");
+}
 
   //Define character sets based on selected types
+
+
+
+
+
 
   //Put together character sets based on user selected types
 
   //Generate the random password
 
-}
+
 
 /* return password;
 } */
