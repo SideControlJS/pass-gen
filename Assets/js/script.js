@@ -17,47 +17,80 @@ function writePassword() {
 
 // Add event listener to generate button
 /* The event is the "click" which triggers when the button is clicked.
-writePassword function is provided as the callback function to be executed when 
+writePassword function is the callback function to be executed when 
 the "click" event occurs on the button. It will generate and display the password.*/
 generateBtn.addEventListener("click", writePassword);
 
+//Created the generatePassword function since it was the missing piece needed to complete this.
+//Used Chrome DevTools to Inspect the starter code and found it was missing the generatePassword function!
+//Used parseInt to parse the string data the user inputs as the number of characters into a number.
 function generatePassword() {
   var password = "";
   var length = parseInt(prompt("Enter desired password length (8-128 characters)"));
 
   // validate password length
+  // Used isNaN to check if the user entered anything other than a number,
+  // or, length is less than 8, or length is greater than 128.
+  // this if statement sends an alert if conditions aren't met.
   if (isNaN(length) || length < 8 || length > 128) {
     alert("Invalid password length. Please enter a number between 8 and 128 characters");
     return;
   }
 
   //Promt for character types to include
+  //Used 'confirm' to make sure the user includes the right characters
   var includeLowercase = confirm("Include lowercase letters?");
   var includeUppercase = confirm("Include uppercase letters?");
   var includeNumbers = confirm("Include numbers?");
   var includeSpecialChars = confirm("Include special characters?");
 
   //Confirm at least one character type is selected
-  if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars);
+  //Using logical operators to compare if any of the necessary characters are NOT included/are false
+  if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars) {
     alert("Please select at least one character type!");
-}
+    return;
+  }
 
-  //Define character sets based on selected types
+  //Define character types based on selected types
+  //Listed out all the variables for each character type that's needed
+  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numberChars = "1234567890";
+  var specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
+  //Put together character types based on user selected types
+  //Used if statements and the += operator to concatenate the strings together after each variable is checked
+  var charType = "";
 
+  if (includeLowercase) {
+    charType += lowercaseChars;
+  }
 
+  if (includeUppercase) {
+    charType += uppercaseChars;
+  }
 
+  if (includeNumbers) {
+    charType += numberChars;
+  }
 
-
-  //Put together character sets based on user selected types
+  if (includeSpecialChars) {
+    charType += specialChars;
+  }
 
   //Generate the random password
+  //Using a for loop to iterate through the array. Using Math.floor/random
+  //to generate a random number then floor to round the number to the near whole number
+  //Used the charAt method to put together the randomly generated characters
+  for (var i = 0; i < length; i++) {
+    var randomNumber = Math.floor(Math.random() * charType.length);
+    password += charType.charAt(randomNumber);
+  }
 
+  return password;
 
+}
 
-/* return password;
-} */
-  
 
 
 // Special Characters " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
