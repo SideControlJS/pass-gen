@@ -26,12 +26,30 @@ function generatePassword() {
   var length = parseInt(prompt("Enter desired password length (8-128 characters)"));
 
   // validate password length
-  if (isNaN(length) || < 8 || length > 128) {
+  if (isNaN(length) || length < 8 || length > 128) {
     alert("Invalid password length. Please enter a number between 8 and 128 characters");
     return;
   }
 
+  //Promt for character types to include
+  var includeLowercase = promt("Include lowercase letters?");
+  var includeUppercase = promt("Include uppercase leters?");
+  var includeNumbers = promt("Include numbers?");
+  var includeSpecialChars = promt("Include special characters?");
+
+  //Confirm at least one character type is selected
+
+
+  //Define character sets based on selected types
+
+  //Put together character sets based on user selected types
+
+  //Generate the random password
+
 }
+
+/* return password;
+} */
   
 
 
