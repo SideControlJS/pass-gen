@@ -23,16 +23,16 @@ generateBtn.addEventListener("click", writePassword);
 
 //Created the generatePassword function since it was the missing piece needed to complete this.
 //Used Chrome DevTools to Inspect the starter code and found it was missing the generatePassword function!
-//Used parseInt to parse the string data the user inputs as the number of characters into a number.
 function generatePassword() {
   var password = "";
-  var length = parseInt(prompt("Enter desired password length (8-128 characters)"));
+  var lengthInput = (prompt("Enter desired password length (8-128 characters)")); //lengthInput variable is used to store the password length input by the user
+  var length = Number(lengthInput);
 
   // validate password length
   // Used isNaN to check if the user entered anything other than a number,
   // or, length is less than 8, or length is greater than 128.
   // this if statement sends an alert if conditions aren't met.
-  if (isNaN(length) || length < 8 || length > 128) {
+  if (!Number.isInteger(length) || length < 8 || length > 128) {
     alert("Invalid password length. Please enter a number between 8 and 128 characters");
     return;
   }
@@ -79,7 +79,7 @@ function generatePassword() {
   }
 
   //Generate the random password
-  //Using a for loop to iterate through the array. Using Math.floor/random
+  //Using a for loop to iterate through the array. Using Math.random
   //to generate a random number then floor to round the number to the near whole number
   //Used the charAt method to put together the randomly generated characters
   for (var i = 0; i < length; i++) {
