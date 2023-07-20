@@ -9,7 +9,7 @@ var generateBtn = document.querySelector("#generate");
 function which is responsible for generating a password and 
 displaying it in the #password input field..*/
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(); //this generatePassword was originally being assigned but it did not exist
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -29,8 +29,8 @@ function generatePassword() {
   var length = Number(lengthInput);
 
   // validate password length
-  // Used isNaN to check if the user entered anything other than a number,
-  // or, length is less than 8, or length is greater than 128.
+  // Used !Number.isInteger to check/convert string value to Number type,
+  // then, length is less than 8, or length is greater than 128.
   // this if statement sends an alert if conditions aren't met.
   if (!Number.isInteger(length) || length < 8 || length > 128) {
     alert("Invalid password length. Please enter a number between 8 and 128 characters");
@@ -38,20 +38,20 @@ function generatePassword() {
   }
 
   //Promt for character types to include
-  //Used 'confirm' to make sure the user includes the right characters
+  //Used 'confirm' to make sure the user includes the right password requirements
   var includeLowercase = confirm("Include lowercase letters?");
   var includeUppercase = confirm("Include uppercase letters?");
   var includeNumbers = confirm("Include numbers?");
   var includeSpecialChars = confirm("Include special characters?");
 
-  //Confirm at least one character type is selected
-  //Using logical operators to compare if any of the necessary characters are NOT included/are false
+  //Confirm at least one of each character type is selected
+  //Using logical operators to compare if any of the necessary character types are NOT acceptable/are false
+  //Sends an alert to the user that they didn't confirm at lesat one character type is not used from the required credentials
   if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars) {
     alert("Please select at least one character type!");
     return;
   }
 
-  //Define character types based on selected types
   //Listed out all the variables for each character type that's needed
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
