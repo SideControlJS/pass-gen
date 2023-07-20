@@ -26,10 +26,11 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   var password = "";
   var lengthInput = (prompt("Enter desired password length (8-128 characters)")); //lengthInput variable is used to store the password length input by the user
+
   var length = Number(lengthInput);
 
   // validate password length
-  // Used !Number.isInteger to check/convert string value to Number type,
+  // The !Number.isInteger(length) checks if the length is not an integer. If non-numeric characters are entered this condition would be true
   // then, length is less than 8, or length is greater than 128.
   // this if statement sends an alert if conditions aren't met.
   if (!Number.isInteger(length) || length < 8 || length > 128) {
@@ -58,7 +59,7 @@ function generatePassword() {
   var numberChars = "1234567890";
   var specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-  //Put together character types based on user selected types
+  //Put together character types based on user confirmed types
   //Used if statements and the += operator to concatenate the strings together after each variable is checked
   var charType = "";
 
