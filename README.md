@@ -5,12 +5,20 @@ For this project, I needed to make sure that this page was able to generate a ra
 
 ## Link to Deployed Page
 
+https://sidecontroljs.github.io/pass-gen/
 
 ## Screenshots of Deployed Webpage
+
+```md
+![DeployedSiteScreenShot](/Assets/Images/deployed_ss.png)
+```
 
 
 ## Local Repo Screenshot
 
+```md
+![LocalRepoScreenShot](/Assets/Images/repo_ss.png)
+```
 
 ## Credits
 I used this README template: 
