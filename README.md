@@ -10,14 +10,14 @@ https://sidecontroljs.github.io/pass-gen/
 ## Screenshots of Deployed Webpage
 
 ```md
-![DeployedSiteScreenShot](/Assets/Images/deployed_ss.png)
+![DeployedSiteScreenShot](Assets/Images/deployed_ss.png)
 ```
 
 
 ## Local Repo Screenshot
 
 ```md
-![LocalRepoScreenShot](/Assets/Images/repo_ss.png)
+![LocalRepoScreenShot](Assets/Images/repo_ss.png)
 ```
 
 ## Credits
