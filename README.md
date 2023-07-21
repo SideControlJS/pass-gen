@@ -9,16 +9,16 @@ https://sidecontroljs.github.io/pass-gen/
 
 ## Screenshots of Deployed Webpage
 
-```md
+
 ![DeployedSiteScreenShot](Assets/Images/deployed_ss.png)
-```
+
 
 
 ## Local Repo Screenshot
 
-```md
+
 ![LocalRepoScreenShot](Assets/Images/repo_ss.png)
-```
+
 
 ## Credits
 I used this README template: 
