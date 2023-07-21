@@ -1,7 +1,7 @@
 // Assignment Code
 /* This line assigns the button element with the id attribute 
 set to  "generate" to the variable generateBtn.  
-It uses document.querySelectr() method to select the element*/
+It uses document.querySelector() method to select the element*/
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -30,7 +30,7 @@ function generatePassword() {
   var length = Number(lengthInput);
 
   // validate password length
-  // The !Number.isInteger(length) checks if the length is not an integer. If non-numeric characters are entered this condition would be true
+  // The !Number.isInteger(length) makes sure only numbers are entered for password length
   // then, length is less than 8, or length is greater than 128.
   // this if statement sends an alert if conditions aren't met.
   if (!Number.isInteger(length) || length < 8 || length > 128) {
